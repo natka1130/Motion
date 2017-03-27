@@ -4,8 +4,8 @@
 		id          = "connection"
         version     = "1.0.0" >
 
-    <name>First app</name>
-    <description>Bussinescard</description>
+    <name>motion</name>
+    <description>Motion</description>
     <author  email="n.lewczuk@gmail.com">
 		Natalia Lewczuk
 	</author>
@@ -14,5 +14,5 @@
 	<plugin name="cordova-plugin-device" spec="~1.1.4" />
 	<plugin name="cordova-plugin-dialogs" spec="~1.3.1" />
     <plugin spec="https://github.com/apache/cordova-plugin-network-information.git" source="git" />
-
+    <plugin spec="https://github.com/apache/cordova-plugin-device-motion.git" source="git" />
 </widget>

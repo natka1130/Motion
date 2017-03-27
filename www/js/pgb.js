@@ -6,18 +6,19 @@ function onDeviceReady() {
 	navigator.notification.beep(1);
 }
 
-function checkConnection() {
-    var networkState = navigator.connection.type;
+function motion() {
+	
+	function onSuccess(acceleration) {
+    alert('Acceleration X: ' + acceleration.x + '\n' +
+          'Acceleration Y: ' + acceleration.y + '\n' +
+          'Acceleration Z: ' + acceleration.z + '\n' +
+          'Timestamp: '      + acceleration.timestamp + '\n');
+}
 
-    var states = {};
-    states[Connection.UNKNOWN]  = 'Nieznane połączenie';
-    states[Connection.ETHERNET] = 'Ethernet';
-    states[Connection.WIFI]     = 'WiFi';
-    states[Connection.CELL_2G]  = 'Siec 2G';
-    states[Connection.CELL_3G]  = 'Siec 3G';
-    states[Connection.CELL_4G]  = 'Siec 4G';
-    states[Connection.CELL]     = 'Siec';
-    states[Connection.NONE]     = 'Brak polaczenia';
+function onError() {
+    alert('onError!');
+}
 
-    navigator.notification.alert('Rodzaj polaczenia: ' + states[networkState]);
+navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+	
 }
